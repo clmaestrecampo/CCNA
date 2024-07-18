@@ -1,11 +1,11 @@
 Factory Reset Routing
-
 conf t
 no ip routing
 ip routing
 end
 
 
+Static Routing
 @EDGE-21
 ip routing
 ip route 10.11.0.0 255.255.0.0 200.0.0.11 1
@@ -17,21 +17,29 @@ ip route 10.31.0.0 255.255.0.0 200.0.0.31 1
 ip route 10.41.0.0 255.255.0.0 200.0.0.41 1
 ip route 10.21.0.0 255.255.0.0 10.21.21.4 1
 
-
 @CUCM-21
 ip route 0.0.0.0 0.0.0.0 10.21.100.4 1
-
 
 @COREbaba21
 ip route 0.0.0.0 0.0.0.0 10.21.21.1 1
 
 
 
-
-
 @linux
-
 sudo ifconfig eth0 10.m.1.9 netmask 255.255.255.0 up
 sudo route add default gw 10.m.1.4
 ping 10.m.1.10
 ping 10.k.1.9
+
+
+
+Command for checking:
+@EDGE, CUCM, SWITCH
+sh ip route
+sh ip route static
+sh ip protocol
+sh ip int bri
+sh run | i route
+sh ip route connected
+sh ip ospf neigh
+sh ip route ospf
