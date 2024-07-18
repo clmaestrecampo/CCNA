@@ -1,0 +1,8 @@
+ping 10.21.1.10
+ping 10.21.1.4
+ping 10.21.100.4
+ping 10.21.100.8
+ping 10.21.21.4 (siraFiber)
+ping 10.21.21.1 (siraEDGE)
+ping 200.0.0.21 (siraEDGE)
+ping 200.0.0.21 (notStaticRouting on EDGE)
