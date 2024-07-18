@@ -43,3 +43,38 @@ sh run | i route
 sh ip route connected
 sh ip ospf neigh
 sh ip route ospf
+
+
+
+
+OPEN SHORTEST PATH FIRST: OSPF
+clear ip ospf process
+(dYKSTRA)
+
+@EDGE-12
+conf t
+no router ospf 1
+router ospf 1
+router-id 21.0.0.1
+network 10.21.21.0 0.0.0.255 area 0
+network 21.0.0.1 0.0.0.0 area 0
+network 200.0.0.0 0.0.0.255 area 0
+end
+
+@COREbaba21: sh ip route | i C
+conf t
+no router ospf 1
+router ospf 1
+network 10.21.1.0 0.0.0.255 area 0
+network 10.21.10.0 0.0.0.255 area 0
+network 10.21.21.0 0.0.0.255 area 0
+network 10.21.50.0 0.0.0.255 area 0
+network 10.21.100.0 0.0.0.255 area 12
+end
+
+@CUCM-12
+conf t
+no router ospf 1
+router ospf 1
+network 10.21.100.0 0.0.0.255 area 12
+end
